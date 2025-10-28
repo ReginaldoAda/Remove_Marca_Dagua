@@ -1,13 +1,7 @@
-
 import { GoogleGenAI, Modality } from "@google/genai";
 
-const API_KEY = process.env.API_KEY;
-
-if (!API_KEY) {
-  throw new Error("A chave da API do Gemini não foi configurada. Verifique suas variáveis de ambiente.");
-}
-
-const ai = new GoogleGenAI({ apiKey: API_KEY });
+// Fix: Use `process.env.API_KEY` as per the guidelines. This also resolves the TypeScript error `Property 'env' does not exist on type 'ImportMeta'` and removes the non-compliant API key handling.
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 const getPrompt = (hasMask: boolean): string => {
     const baseInstructions = "A imagem resultante DEVE ter as mesmas dimensões (largura e altura) da imagem original. Preserve a qualidade original da imagem o máximo possível, evitando compressão excessiva. Retorne apenas a imagem final limpa, sem nenhum texto ou explicação adicional.";

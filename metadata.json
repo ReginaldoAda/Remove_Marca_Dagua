@@ -1,0 +1,5 @@
+{
+  "name": "Copy of Removedor de Marca d'Água com IA",
+  "description": "Um aplicativo web que utiliza a API do Gemini para remover marcas d'água de imagens de forma inteligente. Faça o upload de uma imagem e veja a mágica acontecer.",
+  "requestFramePermissions": []
+}
